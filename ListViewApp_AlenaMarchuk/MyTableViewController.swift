@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyTableViewController: UITableViewController {
+class MyTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var WesterosHouses = [
         House(name: "House Arryn\nof\nthe Eyrie", sigil: #imageLiteral(resourceName: "ArrynSigil2"), words: "\nThe Words:\n\n\"As High As Honor\"", founded: "Coming of the Andals",
@@ -79,6 +79,9 @@ class MyTableViewController: UITableViewController {
               overlord: [#imageLiteral(resourceName: "StarkSigil"), #imageLiteral(resourceName: "BoltonSigil"), #imageLiteral(resourceName: "StarkSigil")])
         ]
     
+    var searchController : UISearchController!
+    var searchResults : [House] = []
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -92,6 +95,14 @@ class MyTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //Adding a searchController and searchBar to the app
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchBar.sizeToFit()
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = true
+        self.tableView.tableHeaderView = self.searchController.searchBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,16 +119,29 @@ class MyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return WesterosHouses.count
+        if searchController.isActive{
+            return searchResults.count
+        }
+        else{
+            return WesterosHouses.count
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "HouseNamesCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MyTableViewCell
         
+        var cellItem : House
+        if searchController.isActive{
+            cellItem = searchResults[indexPath.row]
+        }
+        else{
+            cellItem = WesterosHouses[indexPath.row]
+        }
+        
         // Configure the cell...
-        cell.cellText?.text = WesterosHouses[indexPath.row].name
-        cell.cellImage?.image = WesterosHouses[indexPath.row].sigil
+        cell.cellText?.text = cellItem.name
+        cell.cellImage?.image = cellItem.sigil
         return cell
     }
     
@@ -184,6 +208,18 @@ class MyTableViewController: UITableViewController {
             }
         }
     }
-
+    
+        func filterContentForSearchText(searchText: String){
+            searchResults = WesterosHouses.filter({ (ToDoItem: House) -> Bool in
+            let nameMatch = ToDoItem.name.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+            return nameMatch != nil
+        })
+    }
+    func updateSearchResults(for searchController: UISearchController){
+        if let textToSearch = searchController.searchBar.text {
+            filterContentForSearchText(searchText: textToSearch)
+            tableView.reloadData()
+        }
+    }
 
 }
