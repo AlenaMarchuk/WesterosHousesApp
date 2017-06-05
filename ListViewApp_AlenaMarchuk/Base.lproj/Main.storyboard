@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cQL-60-OLM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Houses of Seven Kingdoms-->
+        <scene sceneID="a1I-tN-grB">
+            <objects>
+                <tableViewController id="aBj-lq-JYO" customClass="MyTableViewController" customModule="ListViewApp_AlenaMarchuk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="rAz-Cf-Y7b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HouseNamesCell" rowHeight="150" id="dYr-hX-UXh" customClass="MyTableViewCell" customModule="ListViewApp_AlenaMarchuk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dYr-hX-UXh" id="laG-D0-Z0j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parchment6" translatesAutoresizingMaskIntoConstraints="NO" id="hFC-uL-6pK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x1J-za-cYD">
+                                            <rect key="frame" x="31" y="8" width="133" height="135"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0iM-5z-LP9">
+                                            <rect key="frame" x="195" y="8" width="136" height="134"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hFC-uL-6pK" firstAttribute="top" secondItem="laG-D0-Z0j" secondAttribute="topMargin" constant="-8" id="9Ac-Wr-TvC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hFC-uL-6pK" secondAttribute="trailing" constant="-8" id="D1O-Ly-oEO"/>
+                                        <constraint firstItem="hFC-uL-6pK" firstAttribute="leading" secondItem="laG-D0-Z0j" secondAttribute="leadingMargin" constant="-8" id="JCl-Xj-SNa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hFC-uL-6pK" secondAttribute="bottom" constant="-196.5" id="RQw-PK-M9v"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bgrdCell" destination="hFC-uL-6pK" id="RiW-HP-ee3"/>
+                                    <outlet property="cellImage" destination="x1J-za-cYD" id="cHb-8o-6Pa"/>
+                                    <outlet property="cellText" destination="0iM-5z-LP9" id="oSL-Rw-kHD"/>
+                                    <segue destination="ACL-8d-lfk" kind="show" identifier="ShowHouseDetail" id="sxN-RE-OA4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aBj-lq-JYO" id="GSY-p6-FHc"/>
+                            <outlet property="delegate" destination="aBj-lq-JYO" id="ziT-Ma-DdN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Houses of Seven Kingdoms" id="LGm-E7-9z6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8JT-uk-BJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991.2" y="-85.007496251874073"/>
+        </scene>
+        <!--My Detail View Controller-->
+        <scene sceneID="s0v-Xu-6Mo">
+            <objects>
+                <viewController id="ACL-8d-lfk" customClass="MyDetailViewController" customModule="ListViewApp_AlenaMarchuk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3un-oX-BJN"/>
+                        <viewControllerLayoutGuide type="bottom" id="A9P-W9-W77"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="StI-sh-Gdt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parchment6" translatesAutoresizingMaskIntoConstraints="NO" id="5Yo-gS-r43">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="houseID" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wqs-5v-zo3">
+                                <rect key="frame" x="149" y="93" width="210" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="houseWords" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xld-WG-M6B">
+                                <rect key="frame" x="36" y="243" width="303" height="196"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overlord: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUW-RB-x3w">
+                                <rect key="frame" x="36" y="467" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Founded:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtv-yO-rq6">
+                                <rect key="frame" x="36" y="540" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j17-Tf-Zab">
+                                <rect key="frame" x="137" y="453" width="44" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="blL-MG-4Jk">
+                                <rect key="frame" x="137" y="537" width="222" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQJ-ka-meI">
+                                <rect key="frame" x="16" y="93" width="125" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Yo-gS-r43" firstAttribute="top" secondItem="3un-oX-BJN" secondAttribute="bottom" id="RsB-aN-sSl"/>
+                            <constraint firstItem="5Yo-gS-r43" firstAttribute="leading" secondItem="StI-sh-Gdt" secondAttribute="leadingMargin" constant="-16" id="TfX-iq-swN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Yo-gS-r43" secondAttribute="trailing" constant="-16" id="b28-j3-3hQ"/>
+                            <constraint firstItem="A9P-W9-W77" firstAttribute="top" secondItem="5Yo-gS-r43" secondAttribute="bottom" id="iXz-Ab-xhf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bkgdImage" destination="5Yo-gS-r43" id="cuD-EF-csu"/>
+                        <outlet property="foundedText" destination="blL-MG-4Jk" id="3Zo-nh-e59"/>
+                        <outlet property="houseText" destination="Wqs-5v-zo3" id="7Jc-8E-BRw"/>
+                        <outlet property="overlordImage" destination="j17-Tf-Zab" id="0kP-sK-0J3"/>
+                        <outlet property="overlordLabel" destination="sUW-RB-x3w" id="6c6-5C-zun"/>
+                        <outlet property="sigilImage" destination="vQJ-ka-meI" id="GWs-ad-wyy"/>
+                        <outlet property="wordsText" destination="Xld-WG-M6B" id="Fej-eZ-YX6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQJ-2e-Uv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844" y="-85.007496251874073"/>
+        </scene>
+        <!--Houses-->
+        <scene sceneID="LyP-7K-cgh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3p3-KI-oY1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Houses" id="7IL-Df-TOk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UXz-YO-Ilg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aBj-lq-JYO" kind="relationship" relationship="rootViewController" id="qew-4z-FIP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTE-E0-g0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="-85.007496251874073"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="unu-Kl-VtY">
+            <objects>
+                <navigationController id="dld-li-aaZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" id="b2d-0U-jSI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IEr-Ae-P7B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6yC-Xn-7rU" kind="relationship" relationship="rootViewController" id="28H-u9-0W0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIm-1h-XdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="600"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="cwL-h0-FEi">
+            <objects>
+                <viewController id="6yC-Xn-7rU" customClass="AboutViewController" customModule="ListViewApp_AlenaMarchuk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JVu-pH-dLq"/>
+                        <viewControllerLayoutGuide type="bottom" id="XEh-XH-ozv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="trs-ei-8cA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="parchment6" translatesAutoresizingMaskIntoConstraints="NO" id="c6j-1s-97Y">
+                                <rect key="frame" x="0.0" y="64" width="375" height="562"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alena" translatesAutoresizingMaskIntoConstraints="NO" id="IgQ-Yb-7fU">
+                                <rect key="frame" x="97" y="109" width="181" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alena Marchuk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ1-gS-itL">
+                                <rect key="frame" x="81" y="283" width="213" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LH2-ys-jHF">
+                                <rect key="frame" x="46" y="332" width="282" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="c6j-1s-97Y" secondAttribute="trailing" constant="-16" id="EIf-bX-5k7"/>
+                            <constraint firstItem="c6j-1s-97Y" firstAttribute="leading" secondItem="trs-ei-8cA" secondAttribute="leadingMargin" constant="-16" id="XF2-2E-ikt"/>
+                            <constraint firstItem="c6j-1s-97Y" firstAttribute="top" secondItem="JVu-pH-dLq" secondAttribute="bottom" id="fHy-yQ-heu"/>
+                            <constraint firstItem="XEh-XH-ozv" firstAttribute="top" secondItem="c6j-1s-97Y" secondAttribute="bottom" id="yyP-aL-94o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rWV-W6-k1T"/>
+                    <connections>
+                        <outlet property="aboutBckgImage" destination="c6j-1s-97Y" id="7jH-hc-193"/>
+                        <outlet property="aboutImage" destination="IgQ-Yb-7fU" id="TSq-9z-2ML"/>
+                        <outlet property="aboutName" destination="YJ1-gS-itL" id="edw-5y-7Xm"/>
+                        <outlet property="aboutText" destination="LH2-ys-jHF" id="kYb-ZB-5qx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfU-vS-TDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1989.5999999999999" y="599.55022488755628"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mxE-5j-deX">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cQL-60-OLM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="a7i-Rn-ulH">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3p3-KI-oY1" kind="relationship" relationship="viewControllers" id="ayb-7v-cfI"/>
+                        <segue destination="dld-li-aaZ" kind="relationship" relationship="viewControllers" id="Wbq-Rv-iiI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYG-5n-EWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="238"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alena" width="160" height="160"/>
+        <image name="parchment6" width="338" height="338"/>
+    </resources>
+</document>
