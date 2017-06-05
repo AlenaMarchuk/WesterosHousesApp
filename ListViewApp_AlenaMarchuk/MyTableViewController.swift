@@ -15,11 +15,11 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
               overlord: [#imageLiteral(resourceName: "TargaryenSigil"), #imageLiteral(resourceName: "BaratheonOfKL")]),
         House(name: "House Baelish\nof\nthe Fingers", sigil: #imageLiteral(resourceName: "BaelishSigil2"), words: "\nUnofficial Words:\n\n\"Knowledge is Power\"", founded: "299 AC",
               overlord: [#imageLiteral(resourceName: "BaratheonOfKL")]),
-        House(name: "House Baratheon\nof\nDragonstone", sigil: #imageLiteral(resourceName: "BaratheonStannisSigil"), words: "Official Words:\n\"Ours is the Fury\"\n\nUnofficial Words:\n\"The Night is Dark and Full of Terrors\"", founded: "284 AC",
+        House(name: "House Baratheon of Dragonstone", sigil: #imageLiteral(resourceName: "BaratheonStannisSigil"), words: "Official Words:\n\"Ours is the Fury\"\n\nUnofficial Words:\n\"The Night is Dark and Full of Terrors\"", founded: "284 AC",
               overlord: [#imageLiteral(resourceName: "TargaryenSigil"), #imageLiteral(resourceName: "BaratheonOfKL"), #imageLiteral(resourceName: "BaratheonStannisSigil")]),
-        House(name: "House Baratheon\nof\nKing's Landing\"", sigil: #imageLiteral(resourceName: "BaratheonOfKL"), words: "Official Words:\n\"Ours is the Fury\"", founded: "283 AC",
+        House(name: "House Baratheon of King's Landing\"", sigil: #imageLiteral(resourceName: "BaratheonOfKL"), words: "Official Words:\n\"Ours is the Fury\"", founded: "283 AC",
               overlord: [#imageLiteral(resourceName: "BaratheonOfKL")]),
-        House(name: "House Baratheon\nof\nStorm's End", sigil: #imageLiteral(resourceName: "BaratheonSigil"), words: "\nThe Words:\n\n\"Ours is the Fury\"", founded: "1 AC",
+        House(name: "House Baratheon of Storm's End", sigil: #imageLiteral(resourceName: "BaratheonSigil"), words: "\nThe Words:\n\n\"Ours is the Fury\"", founded: "1 AC",
               overlord: [#imageLiteral(resourceName: "TargaryenSigil"), #imageLiteral(resourceName: "BaratheonOfKL")]),
         House(name: "House Bolton\nof\nDreadford", sigil: #imageLiteral(resourceName: "BoltonSigil"), words: "Official Words:\n\"Our Blades are Sharp\"\n\nUnofficial Words:\n\"A Naked Man Has Few Secrets,\nA Flayed Man, None\"", founded: "Age of Heroes",
               overlord: [#imageLiteral(resourceName: "StarkSigil"), #imageLiteral(resourceName: "BoltonSigil"), #imageLiteral(resourceName: "StarkSigil")]),
@@ -101,7 +101,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         self.searchController.searchBar.sizeToFit()
         self.searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.searchResultsUpdater = self
-        self.searchController.dimsBackgroundDuringPresentation = true
+        self.searchController.dimsBackgroundDuringPresentation = false
         self.tableView.tableHeaderView = self.searchController.searchBar
     }
 
@@ -158,7 +158,12 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if searchController.isActive{
+            return false
+        }
+        else{
+            return true
+        }
     }
     
 
@@ -201,7 +206,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let detailVC = segue.destination as! MyDetailViewController
     
-                detailVC.HouseDetail = WesterosHouses[indexPath.row]
+                detailVC.HouseDetail = searchController.isActive ? searchResults[indexPath.row] : WesterosHouses[indexPath.row]
             
                 //display only back arrow image without text in segue view
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
