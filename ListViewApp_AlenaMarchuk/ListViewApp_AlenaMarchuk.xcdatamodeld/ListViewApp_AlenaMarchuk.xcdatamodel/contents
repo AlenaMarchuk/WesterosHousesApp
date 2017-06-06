@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="House" representedClassName="" syncable="YES"/>
+    <entity name="House" representedClassName="HouseMO" syncable="YES">
+        <attribute name="founded" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="overlord" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="sigil" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="words" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="House" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="House" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

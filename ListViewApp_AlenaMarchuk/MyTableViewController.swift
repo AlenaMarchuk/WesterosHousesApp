@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class MyTableViewController: UITableViewController, UISearchResultsUpdating {
-    var WesterosHouses = [
-        House(name: "House Arryn\nof\nthe Eyrie", sigil: #imageLiteral(resourceName: "ArrynSigil2"), words: "\nThe Words:\n\n\"As High As Honor\"", founded: "Coming of the Andals",
+    var WesterosHouses : [HouseMO] = []
+    /*
+        (name: "House Arryn\nof\nthe Eyrie", sigil: #imageLiteral(resourceName: "ArrynSigil2"), words: "\nThe Words:\n\n\"As High As Honor\"", founded: "Coming of the Andals",
               overlord: #imageLiteral(resourceName: "BaratheonOfKL")),
-        House(name: "House Baelish\nof\nthe Fingers", sigil: #imageLiteral(resourceName: "BaelishSigil2"), words: "\nUnofficial Words:\n\n\"Knowledge is Power\"", founded: "299 AC",
+        (name: "House Baelish\nof\nthe Fingers", sigil: #imageLiteral(resourceName: "BaelishSigil2"), words: "\nUnofficial Words:\n\n\"Knowledge is Power\"", founded: "299 AC",
               overlord: #imageLiteral(resourceName: "BaratheonOfKL")),
-        House(name: "House Baratheon of Dragonstone", sigil: #imageLiteral(resourceName: "BaratheonStannisSigil"), words: "Official Words:\n\"Ours is the Fury\"\n\nUnofficial Words:\n\"The Night is Dark and Full of Terrors\"", founded: "284 AC",
-              overlord: #imageLiteral(resourceName: "BaratheonStannisSigil")),
+        (name: "House Baratheon of Dragonstone", sigil: #imageLiteral(resourceName: "BaratheonStannisSigil"), words: "Official Words:\n\"Ours is the Fury\"\n\nUnofficial Words:\n\"The Night is Dark and Full of Terrors\"", founded: "284 AC",
+              overlord: #imageLiteral(resourceName: "BaratheonStannisSigil"))]
+ */
+    /*
         House(name: "House Baratheon of King's Landing\"", sigil: #imageLiteral(resourceName: "BaratheonOfKL"), words: "Official Words:\n\"Ours is the Fury\"", founded: "283 AC",
               overlord: #imageLiteral(resourceName: "BaratheonOfKL")),
         House(name: "House Baratheon of Storm's End", sigil: #imageLiteral(resourceName: "BaratheonSigil"), words: "\nThe Words:\n\n\"Ours is the Fury\"", founded: "1 AC",
@@ -75,9 +79,12 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         House(name: "House Westerling\nof\nthe Crag", sigil: #imageLiteral(resourceName: "WesterlingSigil3"), words: "\nThe Words:\n\n\"Honor, not Honors\"", founded: "Descend from First Men",
               overlord: #imageLiteral(resourceName: "LannisterSigil"))
         ]
+ */
     
     var searchController : UISearchController!
-    var searchResults : [House] = []
+    var searchResults : [HouseMO] = []
+    
+    var fetchResultsController : NSFetchedResultsController<HouseMO>!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -99,8 +106,54 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         self.searchController.searchResultsUpdater = self
         self.searchController.dimsBackgroundDuringPresentation = false
         self.tableView.tableHeaderView = self.searchController.searchBar
+        
+        let fetchRequest : NSFetchRequest<HouseMO> = HouseMO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultsController.delegate = self
+            
+            do {
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects{
+                    WesterosHouses = fetchedObjects
+                }
+            }catch{
+                print(error)
+            }
+        }
+
     }
     
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath{
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath{
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath{
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+        default:
+            tableView.reloadData()
+        }
+        
+        if let fetchedObjects = controller.fetchedObjects{
+            WesterosHouses = fetchedObjects as! [HouseMO]
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
+        tableView.endUpdates()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -133,7 +186,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         let cellIdentifier = "HouseNamesCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MyTableViewCell
         
-        var cellItem : House
+        var cellItem : HouseMO
         if searchController.isActive{
             cellItem = searchResults[indexPath.row]
         }
@@ -143,7 +196,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         
         // Configure the cell...
         cell.cellText?.text = cellItem.name
-        cell.cellImage?.image = cellItem.sigil
+        cell.cellImage?.image = UIImage(data: cellItem.sigil! as Data)
         return cell
     }
     
@@ -174,11 +227,17 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            WesterosHouses.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            //WesterosHouses.remove(at: indexPath.row)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                let context = appDelegate.persistentContainer.viewContext
+                let itemToDelete = self.fetchResultsController.object(at: indexPath)
+                context.delete(itemToDelete)
+                appDelegate.saveContext()
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
 
@@ -207,26 +266,28 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         if segue.identifier == "ShowHouseDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let detailVC = segue.destination as! MyDetailViewController
-    
+                
                 detailVC.HouseDetail = searchController.isActive ? searchResults[indexPath.row] : WesterosHouses[indexPath.row]
-            
+                
                 //display only back arrow image without text in segue view
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
             }
         }
-        else if segue.identifier == "AddNewHouse" {
-            let addVC = segue.destination as! AddViewController
-            addVC.newHouse = addData
-        }
+        /*
+         else if segue.identifier == "AddNewHouse" {
+         let addVC = segue.destination as! AddViewController
+         addVC.newHouse = addData
+         }
+         */
     }
     
-    func addData(newItem: House){
+    func addData(newItem: HouseMO){
         WesterosHouses.append(newItem)
     }
     
-        func filterContentForSearchText(searchText: String){
-            searchResults = WesterosHouses.filter({ (ToDoItem: House) -> Bool in
-            let nameMatch = ToDoItem.name.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+    func filterContentForSearchText(searchText: String){
+        searchResults = WesterosHouses.filter({ (ToDoItem: HouseMO) -> Bool in
+            let nameMatch = ToDoItem.name?.range(of: searchText, options: String.CompareOptions.caseInsensitive)
             return nameMatch != nil
         })
     }
