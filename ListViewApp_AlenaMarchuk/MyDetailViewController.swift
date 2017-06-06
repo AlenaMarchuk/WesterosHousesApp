@@ -47,7 +47,6 @@ class MyDetailViewController: UIViewController {
         var aDly = 2.0
         
         let totalOverlords = HouseDetail.overlord.count
-        print(totalOverlords)
         
         for i in 0..<totalOverlords{
        

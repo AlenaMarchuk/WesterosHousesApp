@@ -9,7 +9,6 @@
 import UIKit
 
 class MyTableViewController: UITableViewController, UISearchResultsUpdating {
-    
     var WesterosHouses = [
         House(name: "House Arryn\nof\nthe Eyrie", sigil: #imageLiteral(resourceName: "ArrynSigil2"), words: "\nThe Words:\n\n\"As High As Honor\"", founded: "Coming of the Andals",
               overlord: [#imageLiteral(resourceName: "TargaryenSigil"), #imageLiteral(resourceName: "BaratheonOfKL")]),
@@ -74,9 +73,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         House(name: "House Velaryon\nof\nDriftmark", sigil: #imageLiteral(resourceName: "VelaryonSigil"), words: "\nThe Words:\n\n\"The Old, the True, the Brave\"", founded: "Prior to 114 BC",
               overlord: [#imageLiteral(resourceName: "BaratheonSigil"), #imageLiteral(resourceName: "BaratheonStannisSigil")]),
         House(name: "House Westerling\nof\nthe Crag", sigil: #imageLiteral(resourceName: "WesterlingSigil3"), words: "\nThe Words:\n\n\"Honor, not Honors\"", founded: "Descend from First Men",
-              overlord: [#imageLiteral(resourceName: "LannisterSigil")]),
-        House(name: "House Whitehill\nof\nHighpoint", sigil: #imageLiteral(resourceName: "WhiteHillSigil"), words: "\nThe Words:\n\n\"Ever Higher\"", founded: "Unknown",
-              overlord: [#imageLiteral(resourceName: "StarkSigil"), #imageLiteral(resourceName: "BoltonSigil"), #imageLiteral(resourceName: "StarkSigil")])
+              overlord: [#imageLiteral(resourceName: "LannisterSigil")])
         ]
     
     var searchController : UISearchController!
@@ -85,7 +82,6 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +100,12 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         self.searchController.dimsBackgroundDuringPresentation = false
         self.tableView.tableHeaderView = self.searchController.searchBar
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -212,6 +214,14 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
             }
         }
+        else if segue.identifier == "AddNewHouse" {
+            let addVC = segue.destination as! AddViewController
+            addVC.newHouse = addData
+        }
+    }
+    
+    func addData(newItem: House){
+        WesterosHouses.append(newItem)
     }
     
         func filterContentForSearchText(searchText: String){
@@ -226,5 +236,4 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
             tableView.reloadData()
         }
     }
-
 }

@@ -10,6 +10,102 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add View Controller-->
+        <scene sceneID="ESo-5S-34k">
+            <objects>
+                <viewController id="jGW-Qq-LFl" customClass="AddViewController" customModule="ListViewApp_AlenaMarchuk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NPP-Hv-qIG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nm5-gO-Yyj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PJg-9b-NTq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parchment6" translatesAutoresizingMaskIntoConstraints="NO" id="yXk-ap-EUR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter house name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLf-jP-FBC">
+                                <rect key="frame" x="52" y="92" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter house sigil" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UiV-tr-2iV">
+                                <rect key="frame" x="52" y="143" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter house words" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWY-a2-Ac0">
+                                <rect key="frame" x="52" y="194" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter year of founding" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-CO-fNU">
+                                <rect key="frame" x="52" y="244" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter house overlord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-xh-h9N">
+                                <rect key="frame" x="52" y="297" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-Kk-TVa">
+                                <rect key="frame" x="52" y="379" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <state key="normal" title="CANCEL">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickCancel:" destination="jGW-Qq-LFl" eventType="touchUpInside" id="xDn-A7-CZh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfH-7X-spW">
+                                <rect key="frame" x="222" y="379" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="20"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickAdd:" destination="jGW-Qq-LFl" eventType="touchUpInside" id="sy9-cW-g6V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="yXk-ap-EUR" secondAttribute="trailing" constant="-16" id="MAp-Se-NcI"/>
+                            <constraint firstItem="yXk-ap-EUR" firstAttribute="leading" secondItem="PJg-9b-NTq" secondAttribute="leadingMargin" constant="-16" id="Y34-Ud-00F"/>
+                            <constraint firstItem="yXk-ap-EUR" firstAttribute="top" secondItem="NPP-Hv-qIG" secondAttribute="bottom" constant="-20" id="nj0-Ty-0ib"/>
+                            <constraint firstItem="Nm5-gO-Yyj" firstAttribute="top" secondItem="yXk-ap-EUR" secondAttribute="bottom" id="pj3-E4-5xG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enterFounding" destination="tTY-CO-fNU" id="LCE-36-hpQ"/>
+                        <outlet property="enterName" destination="LLf-jP-FBC" id="QKf-ha-5n7"/>
+                        <outlet property="enterOverlord" destination="tsC-xh-h9N" id="Xkq-PW-NLZ"/>
+                        <outlet property="enterSigil" destination="UiV-tr-2iV" id="JhL-wk-i9C"/>
+                        <outlet property="enterWords" destination="qWY-a2-Ac0" id="nq6-39-y4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwp-WZ-8V9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844" y="-820.83958020989508"/>
+        </scene>
         <!--Houses of Seven Kingdoms-->
         <scene sceneID="a1I-tN-grB">
             <objects>
@@ -60,7 +156,13 @@
                             <outlet property="delegate" destination="aBj-lq-JYO" id="ziT-Ma-DdN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Houses of Seven Kingdoms" id="LGm-E7-9z6"/>
+                    <navigationItem key="navigationItem" title="Houses of Seven Kingdoms" id="LGm-E7-9z6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yhA-dl-7gY">
+                            <connections>
+                                <segue destination="jGW-Qq-LFl" kind="presentation" identifier="AddNewHouse" id="xgW-OG-AQO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8JT-uk-BJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

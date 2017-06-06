@@ -15,6 +15,7 @@
 		F7C1A77D1EC78CB8009CF225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C1A77C1EC78CB8009CF225 /* Assets.xcassets */; };
 		F7C1A7801EC78CB8009CF225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C1A77E1EC78CB8009CF225 /* LaunchScreen.storyboard */; };
 		F7C1A78A1EC78DC8009CF225 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C1A7891EC78DC8009CF225 /* MyTableViewController.swift */; };
+		F7C63A691EE60F7D00D9331C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C63A681EE60F7D00D9331C /* AddViewController.swift */; };
 		F7D4E6541EE0B02B0077E6EE /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4E6531EE0B02B0077E6EE /* House.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		F7C1A77F1EC78CB8009CF225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7C1A7811EC78CB9009CF225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C1A7891EC78DC8009CF225 /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTableViewController.swift; path = ListViewApp_AlenaMarchuk/MyTableViewController.swift; sourceTree = "<group>"; };
+		F7C63A681EE60F7D00D9331C /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F7D4E6531EE0B02B0077E6EE /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 			children = (
 				F7C1A7751EC78CB7009CF225 /* AppDelegate.swift */,
 				F7C1A7791EC78CB7009CF225 /* Main.storyboard */,
+				F7C63A681EE60F7D00D9331C /* AddViewController.swift */,
 				F732AF611EC8374C00A178B0 /* AboutViewController.swift */,
 				F732AF5F1EC82A8700A178B0 /* MyDetailViewController.swift */,
 				F7A6BB0A1EC7C41C00A8452D /* MyTableViewCell.swift */,
@@ -151,6 +154,7 @@
 			files = (
 				F7C1A78A1EC78DC8009CF225 /* MyTableViewController.swift in Sources */,
 				F7C1A7761EC78CB7009CF225 /* AppDelegate.swift in Sources */,
+				F7C63A691EE60F7D00D9331C /* AddViewController.swift in Sources */,
 				F7A6BB0B1EC7C41C00A8452D /* MyTableViewCell.swift in Sources */,
 				F732AF621EC8374C00A178B0 /* AboutViewController.swift in Sources */,
 				F7D4E6541EE0B02B0077E6EE /* House.swift in Sources */,
