@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListViewApp_AlenaMarchuk/AddViewController.swift"
+            timestampString = "518427979.998912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "clickAdd(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListViewApp_AlenaMarchuk/MyTableViewController.swift"
+            timestampString = "518424489.120109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "WesterosHouses"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ListViewApp_AlenaMarchuk.MyTableViewController.WesterosHouses.getter : Swift.Array&lt;ListViewApp_AlenaMarchuk.House&gt;"
+                  moduleName = "ListViewApp_AlenaMarchuk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alena/Documents/ListViewApp_AlenaMarchuk/ListViewApp_AlenaMarchuk/MyTableViewController.swift"
+                  timestampString = "518427823.181681"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ListViewApp_AlenaMarchuk.MyTableViewController.WesterosHouses.setter : Swift.Array&lt;ListViewApp_AlenaMarchuk.House&gt;"
+                  moduleName = "ListViewApp_AlenaMarchuk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alena/Documents/ListViewApp_AlenaMarchuk/ListViewApp_AlenaMarchuk/MyTableViewController.swift"
+                  timestampString = "518427823.183973"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ListViewApp_AlenaMarchuk.MyTableViewController.init (style : __C.UITableViewStyle) -&gt; ListViewApp_AlenaMarchuk.MyTableViewController"
+                  moduleName = "ListViewApp_AlenaMarchuk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alena/Documents/ListViewApp_AlenaMarchuk/ListViewApp_AlenaMarchuk/MyTableViewController.swift"
+                  timestampString = "518427823.185865"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ListViewApp_AlenaMarchuk.MyTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ListViewApp_AlenaMarchuk.MyTableViewController"
+                  moduleName = "ListViewApp_AlenaMarchuk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alena/Documents/ListViewApp_AlenaMarchuk/ListViewApp_AlenaMarchuk/MyTableViewController.swift"
+                  timestampString = "518427823.187821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ListViewApp_AlenaMarchuk.MyTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ListViewApp_AlenaMarchuk.MyTableViewController&gt;"
+                  moduleName = "ListViewApp_AlenaMarchuk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alena/Documents/ListViewApp_AlenaMarchuk/ListViewApp_AlenaMarchuk/MyTableViewController.swift"
+                  timestampString = "518427823.189665"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ListViewApp_AlenaMarchuk/AddViewController.swift"
+            timestampString = "518427979.998912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "clickAdd(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -44,7 +44,7 @@ class AddViewController: UIViewController {
         }
         
         newHouse(House(name: self.enterName.text!, sigil: UIImage(named: self.enterSigil.text!)!, words: self.enterWords.text!,
-                        founded: self.enterFounding.text!, overlord: [UIImage(named: self.enterOverlord.text!)!]))
+                        founded: self.enterFounding.text!, overlord: UIImage(named: self.enterOverlord.text!)!))
         
         self.dismiss(animated: true, completion: nil)
     }

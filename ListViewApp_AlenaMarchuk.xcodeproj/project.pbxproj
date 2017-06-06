@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F732AF601EC82A8700A178B0 /* MyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732AF5F1EC82A8700A178B0 /* MyDetailViewController.swift */; };
 		F732AF621EC8374C00A178B0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732AF611EC8374C00A178B0 /* AboutViewController.swift */; };
+		F76163BC1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F76163BA1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodeld */; };
 		F7A6BB0B1EC7C41C00A8452D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A6BB0A1EC7C41C00A8452D /* MyTableViewCell.swift */; };
 		F7C1A7761EC78CB7009CF225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C1A7751EC78CB7009CF225 /* AppDelegate.swift */; };
 		F7C1A77B1EC78CB7009CF225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C1A7791EC78CB7009CF225 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		F732AF5F1EC82A8700A178B0 /* MyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDetailViewController.swift; sourceTree = "<group>"; };
 		F732AF611EC8374C00A178B0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F76163BB1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListViewApp_AlenaMarchuk.xcdatamodel; sourceTree = "<group>"; };
 		F7A6BB0A1EC7C41C00A8452D /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		F7C1A7721EC78CB6009CF225 /* ListViewApp_AlenaMarchuk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListViewApp_AlenaMarchuk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C1A7751EC78CB7009CF225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				F7C1A7751EC78CB7009CF225 /* AppDelegate.swift */,
+				F76163BA1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodeld */,
 				F7C1A7791EC78CB7009CF225 /* Main.storyboard */,
 				F7C63A681EE60F7D00D9331C /* AddViewController.swift */,
 				F732AF611EC8374C00A178B0 /* AboutViewController.swift */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76163BC1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodeld in Sources */,
 				F7C1A78A1EC78DC8009CF225 /* MyTableViewController.swift in Sources */,
 				F7C1A7761EC78CB7009CF225 /* AppDelegate.swift in Sources */,
 				F7C63A691EE60F7D00D9331C /* AddViewController.swift in Sources */,
@@ -325,6 +329,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F76163BA1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F76163BB1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodel */,
+			);
+			currentVersion = F76163BB1EE718EE0035269E /* ListViewApp_AlenaMarchuk.xcdatamodel */;
+			path = ListViewApp_AlenaMarchuk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F7C1A76A1EC78CB6009CF225 /* Project object */;
 }

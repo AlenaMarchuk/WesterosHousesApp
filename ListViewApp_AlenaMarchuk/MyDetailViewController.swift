@@ -41,17 +41,13 @@ class MyDetailViewController: UIViewController {
         //Fade-in animation of the overlords
         let width = 44
         let height = 49
-        var xPos = 137
+        let xPos = 137
         let yPos = 453
-        var aDur = 2.0
-        var aDly = 2.0
-        
-        let totalOverlords = HouseDetail.overlord.count
-        
-        for i in 0..<totalOverlords{
+        let aDur = 2.0
+        let aDly = 2.0
        
         let overlord = UIImageView()
-        overlord.image = self.HouseDetail.overlord[i]
+        overlord.image = self.HouseDetail.overlord
         overlord.frame = CGRect(x: xPos, y: yPos, width: width, height: height)
         self.view.addSubview(overlord)
         overlord.alpha = 0
@@ -60,10 +56,6 @@ class MyDetailViewController: UIViewController {
         {
             overlord.alpha = 1
         }, completion: nil)
-        xPos += 50
-        aDur += 1.0
-        aDly += 1.0
-      }
     }
 
     override func didReceiveMemoryWarning() {

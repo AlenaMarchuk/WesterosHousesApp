@@ -13,9 +13,9 @@ class House: NSObject {
     var sigil = UIImage(named:"")
     var words = ""
     var founded = ""
-    var overlord : [UIImage] = []
+    var overlord = UIImage(named:"")
     
-    init(name: String, sigil: UIImage, words: String, founded: String, overlord: [UIImage]){
+    init(name: String, sigil: UIImage, words: String, founded: String, overlord: UIImage){
         self.name = name
         self.sigil = sigil
         self.words = words
